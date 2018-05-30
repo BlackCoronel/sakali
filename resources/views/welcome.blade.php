@@ -42,7 +42,7 @@
 <div class="header">
     <div class="container">
         <figure class="logo animated fadeInDown delay-07s">
-           <img src="img/img_index.png" alt="">
+           <img src="img/principal_img.png" alt="">
         </figure>
         <h2 class="animated fadeInDown delay-07s">Bienvenido a Viseras Sakali</h2>
         <ul class="we-create animated fadeInUp delay-1s">

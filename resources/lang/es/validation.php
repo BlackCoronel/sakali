@@ -105,6 +105,14 @@ return [
         'email' => [
             'unique' => 'El :attribute ya ha sido registrado.',
         ],
+        'marca' => [
+            'unique' => 'Esa marca ya se encuentra registrada',
+            'required' =>'El campo marca no puede estar vacio',
+        ],
+        'modelo' => [
+            'unique' => 'ese modelo ya se encuentra registrado',
+            'required' => 'el campo modelo no puede estar vacio',
+        ],
     ],
 
     /*

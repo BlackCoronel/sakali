@@ -8,5 +8,5 @@ class Marcas extends Model
 {
     protected $fillable = ['marca','img_marca'];
 
-    protected $table = "users";
+    protected $table = "marcas";
 }

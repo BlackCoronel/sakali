@@ -16,4 +16,9 @@ class ContactController extends Controller
         return redirect()->back()->with('message', 'Gracias por contactar con nosotros, le responderemos los más rápido posible!');
     }
 
+    public function show(){
+
+        return view('forms.contact');
+    }
+
 }

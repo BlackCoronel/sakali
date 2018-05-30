@@ -51,7 +51,7 @@
                 <a href="/"><img src="/img/logo.jpg" alt="" width="70%"></a>
             </li>
             <li>
-                <a href="/team"><i class="fas fa-users" style="margin-right: 10px;"></i>Equipo</a>
+                <a href="/team"><i class="fa fa-users" style="margin-right: 10px;"></i>Equipo</a>
             </li>
             <li>
                 <a href="/contact"><i class="fa fa-phone" style="margin-right: 10px;"></i>Contacta</a>
