@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Marcas;
 use App\Modelos;
+use App\Productos;
 
 class adminPanelController extends Controller
 {
@@ -21,6 +22,14 @@ class adminPanelController extends Controller
         $marcas = DB::table('marcas')->get();
 
         return view('admin.layouts.alta.alta_modelo', compact('marcas'));
+    }
+
+    public function productosAltaForm(){
+
+        $marcas = DB::table('marcas')->get();
+        $categorias = DB::table('categorias')->get();
+
+        return view('admin.layouts.alta.alta_producto',compact('marcas','categorias'));
     }
 
     public function marcasBajaForm(){
@@ -79,5 +88,62 @@ class adminPanelController extends Controller
 
         return redirect(url()->current())->with('status', 'Modelo registrado con éxito !!!');
 
+    }
+
+    //Accciones Productos
+
+    public function altaProductos(Request $request){
+
+        $this->validate($request,[
+
+            'marca' => 'required',
+            'modelo' => 'required',
+            'categoria' => 'required',
+            'referencia' => 'required',
+            'descripcion' => 'required|max:2000',
+
+        ]);
+
+
+        $modelo = DB::table('modelos')->where('modelo',$request->modelo)->get();
+
+        $alta = new Productos([
+
+            'marca' => $modelo->id_m,
+            'modelo' => $modelo->id_mod,
+            'categoria' => $request->categoria,
+            'referencia' => $request->referencia,
+            'descripcion' => $request->descripcion,
+            'url_fotos' => 'hola soy las fotos',
+
+        ]);
+
+        $alta->save();
+
+        return view('admin.layouts.alta.alta_producto')->with('status','El producto se ha registrado con éxito!!!');
+
+
+    }
+
+    public function cargarModelos(){
+
+        $salida = [];
+
+        $modelos = DB::table('modelos')->get();
+
+        header("Content-Type: application/xml");
+
+        foreach ($modelos as $modelo){
+
+            $salida[] = "<modelo>
+                    <id_modelo>".$modelo->id_mod."</id_modelo>
+                    <id_marca>".$modelo->id_m."</id_marca>
+                    <nombre>".$modelo->modelo."</nombre>
+                </modelo>";
+        }
+
+        echo "<modelos>". implode($salida) . "</modelos>";
+
+        return view('admin.cargarModelos');
     }
 }

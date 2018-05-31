@@ -72,9 +72,21 @@ Route::post('/alta_marca','adminPanelController@altaMarcas');
 Route::get('/alta_modelo', 'adminPanelController@modelosAltaForm');
 Route::post('/alta_modelo', 'adminPanelController@altaModelos');
 
+Route::get('/alta_producto', 'adminPanelController@productosAltaForm');
+
 //Bajas
 
 Route::get('/borrar_marca', 'adminPanelController@marcasBajaForm');
 Route::post('/borrar_marca', 'adminPanelController@borrarMarcas');
 
+});
+
+//Carga de los modelos mediante ajax
+Route::get('/cargarmodelos','adminPanelController@cargarModelos');
+
+//ruta de pruebas
+
+Route::get('/prueba', function(){
+
+    return view('prueba');
 });

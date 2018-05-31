@@ -113,6 +113,12 @@ return [
             'unique' => 'ese modelo ya se encuentra registrado',
             'required' => 'el campo modelo no puede estar vacio',
         ],
+        'categoria' => [
+            'required' => 'el campo categoria no puede estar vacio',
+        ],
+        'referencia' => [
+            'required' => 'el campo categoria no puede estar vacio',
+        ],
     ],
 
     /*

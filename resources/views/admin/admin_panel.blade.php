@@ -9,11 +9,12 @@
     <title>Panel de administrador</title>
 
     <!-- Font Awesome Icons -->
-    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="/css/font-awesome.css" rel="stylesheet" type="text/css">
     <!-- Theme style -->
     <link rel="stylesheet" href="css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dropzone.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -73,7 +74,7 @@
                     <img src="/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">{{strtoupper(auth()->user()->name)}}</a>
+                    <a href="/perfil/{{auth()->user()->id}}" class="d-block">{{strtoupper(auth()->user()->name)}}</a>
                 </div>
             </div>
 
@@ -112,7 +113,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/inline.html" class="nav-link">
+                                <a href="alta_producto" class="nav-link">
                                     <i class="fa fa-plus-circle nav-icon"></i>
                                     <p>Nuevo producto</p>
                                 </a>

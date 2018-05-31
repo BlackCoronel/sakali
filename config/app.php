@@ -162,6 +162,7 @@ return [
 
         //poveedores instalados por el administrador
         Collective\Html\HtmlServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
 
     ],
 
