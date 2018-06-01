@@ -1,7 +1,6 @@
 @extends('admin.admin_panel')
 
 @section('content')
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <div class="card card-primary">
         <div class="card-header">
             <h3 class="card-title"><i class="fa fa-shopping-cart"></i> - Alta Producto</h3>
@@ -42,7 +41,7 @@
                 </select>
             </div>
             <div class="form-group">
-                {{  Form::label('marca')}}
+                {{  Form::label('categoría')}}
                 <select name="marca" class="form-control {{ $errors->has('categoria') ? ' is-invalid' : '' }}">
                     @foreach($categorias as $categoria)
                         @if($marca->marca == old('categoria'))
@@ -58,15 +57,18 @@
                 </span>
                 @endif
             </div>
-            <div class="textarea"></div>
-            <div class="dropzone"></div>
+            {{ Form::label('Descripción') }}
+            <div class="form-group">
+                <textarea class="form-control" rows="4" name="descripcion" style="resize: none;"></textarea>
+            </div>
+            {{ Form::label('Fotos producto') }}
+             <div class="dropzone"></div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">crear</button>
             </div>
             {!! Form::close() !!}
         </div>
     </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js"></script>
     <script src="/js/modelos.js"></script>
@@ -90,6 +92,4 @@
         });
         Dropzone.autoDiscover = false;
     </script>
-
-
 @endsection

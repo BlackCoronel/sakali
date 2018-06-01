@@ -10,6 +10,8 @@
 
     <!-- Font Awesome Icons -->
     <link href="/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+
     <!-- Theme style -->
     <link rel="stylesheet" href="css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
@@ -210,7 +212,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/adminpanel">Panel administrador</a></li>
-                            <li class="breadcrumb-item active">{{url()->current()}}</li>
+                            <li class="breadcrumb-item active"><a href="{{ url()->current() }}"></a></li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
